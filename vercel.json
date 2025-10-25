@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/api/fe/wordle-words",
+      "destination": "https://api.frontendexpert.io/api/fe/wordle-words"
+    }
+  ]
+}
