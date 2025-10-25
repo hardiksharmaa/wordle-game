@@ -1,0 +1,250 @@
+body {
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #1a1a1b;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
+  margin: 20px auto;
+  position: relative; 
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 0 20px 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #d3d6da;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.line {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.tile {
+  width: 50px;
+  height: 50px;
+  margin: 2px;
+  border: 2px solid #d3d6da;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.tile.filled {
+  border-color: #878a8c;
+}
+
+.correct {
+  background-color: #6aaa64;
+  border-color: #6aaa64;
+  color: white;
+}
+
+.close {
+  background-color: #c9b458;
+  border-color: #c9b458;
+  color: white;
+}
+
+.incorrect {
+  background-color: #787c7e;
+  border-color: #787c7e;
+  color: white;
+}
+
+
+.emoji-bg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.emoji-bg-item {
+  position: absolute;
+  font-size: 3em;
+  opacity: 0.15; 
+  animation: floatAndFade 20s infinite ease-in-out; 
+}
+
+.emoji-bg-item:nth-child(1) {
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+  font-size: 2.5em;
+}
+.emoji-bg-item:nth-child(2) {
+  top: 30%;
+  left: 90%;
+  animation-delay: 3s;
+  font-size: 3em;
+}
+.emoji-bg-item:nth-child(3) {
+  top: 70%;
+  left: 15%;
+  animation-delay: 6s;
+  font-size: 2em;
+}
+.emoji-bg-item:nth-child(4) {
+  top: 85%;
+  left: 70%;
+  animation-delay: 9s;
+  font-size: 3.5em;
+}
+.emoji-bg-item:nth-child(5) {
+  top: 50%;
+  left: 30%;
+  animation-delay: 12s;
+  font-size: 2.8em;
+}
+.emoji-bg-item:nth-child(6) {
+  top: 5%;
+  left: 60%;
+  animation-delay: 15s;
+  font-size: 3.2em;
+}
+.emoji-bg-item:nth-child(7) {
+  top: 90%;
+  left: 50%;
+  animation-delay: 18s;
+  font-size: 2.7em;
+}
+.emoji-bg-item:nth-child(8) {
+  top: 40%;
+  left: 8%;
+  animation-delay: 21s;
+  font-size: 3.1em;
+}
+.emoji-bg-item:nth-child(9) {
+  top: 20%;
+  left: 75%;
+  animation-delay: 24s;
+  font-size: 2.4em;
+}
+.emoji-bg-item:nth-child(10) {
+  top: 75%;
+  left: 80%;
+  animation-delay: 27s;
+  font-size: 3.0em;
+}
+.emoji-bg-item:nth-child(11) {
+  top: 55%;
+  left: 5%;
+  animation-delay: 30s;
+  font-size: 2.6em;
+}
+.emoji-bg-item:nth-child(12) {
+  top: 15%;
+  left: 45%;
+  animation-delay: 33s;
+  font-size: 3.3em;
+}
+
+
+@keyframes floatAndFade {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0.12; 
+  }
+  25% {
+    transform: translateY(-15px) rotate(8deg) scale(1.03); 
+    opacity: 0.18;
+  }
+  50% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0.15;
+  }
+  75% {
+    transform: translateY(15px) rotate(-8deg) scale(0.97);
+    opacity: 0.18;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0.12;
+  }
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+
+.modal-content p {
+  font-size: 1.1rem;
+}
+
+.modal-content strong {
+  color: #c9b458;
+}
+
+.modal-content button {
+  background-color: #6aaa64;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: opacity 0.2s;
+}
+
+.modal-content button:hover {
+  opacity: 0.9;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
